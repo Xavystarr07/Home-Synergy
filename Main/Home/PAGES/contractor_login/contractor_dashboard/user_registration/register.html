@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Synergy</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+    <div class="registration-container">
+        <form id="registrationForm" method="POST" action="register.php" enctype="multipart/form-data" onsubmit="return validateForm() && validateAddress()">
+            <label class="register-label">Registration</label>
+            <!-- Step 1: User Information -->
+            <div id="step1">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter Your Name" autocomplete="on">
+                <br>
+
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" required placeholder="Enter Your Surname" autocomplete="on">
+                <br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter Your Email" autocomplete="on">
+                <br>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required placeholder="Enter Your Address" autocomplete="on">
+                <br>
+
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter Your Number" autocomplete="on">
+                <br>
+
+                <button type="button" class="btn" onclick="showStep2()">Next</button>
+            </div>
+
+            <!-- Step 2: Account Information -->
+            <div id="step2" style="display: none;">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter Your Username" autocomplete="on">
+                <br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter Your Password" autocomplete="on" class="password">
+                <br>
+
+                <button type="submit" class="btn">Register</button>
+                <button type="button" class="btn" onclick="showStep1()">Back</button>
+            </div>
+        </form>
+    </div>
+
+ <script>
+// Function to validate form fields and proceed to step 2
+function showStep2() {
+    // Check fields in step 1
+    const name = document.getElementById("name").value.trim();
+    const surname = document.getElementById("surname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword") ? document.getElementById("confirmPassword").value.trim() : '';
+
+    // Check for name format and minimum length
+    if (!/^[A-Za-z ]+$/.test(name) || name.length < 2) {
+        alert("Name can only contain letters and spaces, and must be at least 2 characters long.");
+        return;
+    }
+
+    // Check for surname format and minimum length
+    if (!/^[A-Za-z ]+$/.test(surname) || surname.length < 2) {
+        alert("Surname can only contain letters and spaces, and must be at least 2 characters long.");
+        return;
+    }
+
+    // Check for valid email format
+    if (!/^[a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    // Check for valid phone number
+    if (!/^0\d{9}$/.test(phone)) {
+        alert("Phone number must start with '0' and be 10 digits long.");
+        return;
+    }
+
+    // Validate address with minimum 1 number and 2 letters
+    if (!validateAddress()) {
+        return; // If address is invalid, stop further validation
+    }
+
+    // AJAX call to validate email and phone number against the database
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("phone", phone);
+    formData.append("checkDuplicates", true); // Custom flag for PHP to handle
+
+    fetch('register.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert(data.error); // Show PHP validation error
+            return;
+        }
+
+        // Show step 2 only if all validations are successful
+        document.getElementById("step1").style.display = "none";
+        document.getElementById("step2").style.display = "block";
+    })
+    .catch(error => {
+        alert('An error occurred: ' + error.message);
+    });
+}
+
+// Function to validate address field
+function validateAddress() {
+    const address = document.getElementById("address").value.trim();
+    
+    // Regular expression: Ensures the address contains at least one number and at least two letters
+    const addressRegex = /^(?=.*\d)(?=.*[A-Za-z].*[A-Za-z]).+$/;
+    
+    if (!addressRegex.test(address)) {
+        alert("Address must contain at least one number and two letters.");
+        return false;
+    }
+    return true;
+}
+
+// Function to go back to step 1
+function showStep1() {
+    document.getElementById("step1").style.display = "block";
+    document.getElementById("step2").style.display = "none";
+}
+</script>
+
+
+</body>
+</html>

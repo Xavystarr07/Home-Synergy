@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Synergy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8F9FA; 
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0177B8;  
+            padding: 15px 30px;
+            color: white;
+        }
+
+        header .logo img {
+            height: 100px; 
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+      nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    background-color: white; 
+    color: #0177B8; 
+	font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+/* Services Section */
+#services {
+    text-align: center;
+    padding: 50px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.service p {
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0177B8; 
+            color: white;
+        }
+
+        .social-links {
+            margin: 10px 0;
+        }
+
+        .social-icon {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    margin: 15px;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 45px;
+    border-radius: 10px;
+    width: 150px; /* Set a fixed width for uniformity */
+    height: 250px; /* Set a fixed height for uniformity */
+}
+
+.team-member img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%; 
+}
+
+
+        #login-prompt {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo and Navbar -->
+    <header>
+        <div class="logo">
+    <a href="../PAGES/contractor_login/contractor_login.php">
+        <img src="../IMAGES/logo.png" alt="Home Synergy Logo">
+    </a>
+</div>
+
+        <nav>
+            <ul>
+                <li><a href="contractor_login/contractor_dashboard/user_registration/register.html">Register</a></li>
+                <li><a href="contractor_login/contractor_dashboard/user_registration/user_login\user_login.php">Login</a></li>
+                <li><a href="applications/applications.html">Join Our Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- About Us Section -->
+<section id="about" style="text-align: center; padding: 20px; background-color: #f9f9f9;">
+    <h2 style="margin-bottom: 10px;">About Us</h2>
+    <p style="max-width: 800px; margin: 0 auto;">
+        Home Synergy connects homeowners with trusted, vetted professionals for all repair, maintenance, and home improvement needs. 
+        From fixes to finishes, we guarantee top-quality service. Our platform simplifies booking and communication, ensuring fast 
+        and hassle-free solutions to keep your home in perfect condition.
+    </p>
+</section>
+
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 style="color: black;">Our Services</h2>
+        <div class="services-container">
+
+            <!-- Service 1: Plumbing -->
+            <div class="service" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
+                <img src="../IMAGES/service1.png" alt="Plumbing">
+                <p class="service-title">Plumbing</p>
+                <p>Expert plumbing services for repairs and maintenance to ensure optimal performance.</p>
+            </div>
+
+            <!-- Service 2: Electrical -->
+            <div class="service" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
+                <img src="../IMAGES/service2.png" alt="Electrical">
+                <p class="service-title">Electrical</p>
+                <p>Reliable electrical repairs and installations for safety and efficiency.</p>
+            </div>
+
+            <!-- Service 3: Carpentry -->
+            <div class="service" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
+                <img src="../IMAGES/service3.png" alt="Carpentry">
+                <p class="service-title">Carpentry</p>
+                <p>Custom carpentry solutions for all your woodworking needs and renovations.</p>
+            </div>
+
+            <!-- Service 4: Painting -->
+            <div class="service" onmouseover="hoverEffect(this)" onmouseout="removeHoverEffect(this)">
+                <img src="../IMAGES/service4.png" alt="Painting">
+                <p class="service-title">Painting</p>
+                <p>Professional painting services for interior and exterior transformations.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JavaScript for Hover Effect -->
+    <script>
+        function hoverEffect(element) {
+            element.style.backgroundColor = "#E6F2FF"; // Change background color on hover
+            element.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.1)"; // Add box shadow on hover
+            element.querySelector(".service-title").style.color = "#0177B8"; // Change service title color on hover
+            element.querySelector("p:nth-of-type(2)").style.color = "#0177B8"; // Change description color on hover
+        }
+
+        function removeHoverEffect(element) {
+            element.style.backgroundColor = ""; // Reset background color
+            element.style.boxShadow = ""; // Remove box shadow
+            element.querySelector(".service-title").style.color = "#179D2E"; // Reset service title color
+            element.querySelector("p:nth-of-type(2)").style.color = "#333"; // Reset description color
+        }
+    </script>
+
+   <!-- Reviews Section -->
+<section id="reviews" style="padding: 20px; background-color: #f9f9f9; text-align: center;">
+    <h2 style="color: #333;">Customer Reviews</h2>
+    <div class="filter" style="margin-bottom: 10px;">
+        <label for="star-rating" style="color: #333;">Filter by Rating:</label>
+        <select id="star-rating" style="margin-left: 10px; padding: 5px;">
+            <option value="all">All</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+        </select>
+    </div>
+    <div id="review-list" style="max-width: 600px; margin: 0 auto;">
+        <div class="review" data-rating="5" style="padding: 10px; border: 1px solid #ccc; margin: 10px 0; border-radius: 5px;">
+            <p style="font-weight: bold;">John Doe - <span style="color: #F5AF23;">★★★★☆</span></p>
+            <p>"Amazing service! Highly recommended for any home repairs."</p>
+        </div>
+        <div class="review" data-rating="4" style="padding: 10px; border: 1px solid #ccc; margin: 10px 0; border-radius: 5px;">
+            <p style="font-weight: bold;">Jane Smith - <span style="color: #F5AF23;">★★★★☆</span></p>
+            <p>"Good service, but a bit pricey. Overall, satisfied."</p>
+        </div>
+        <div class="review" data-rating="3" style="padding: 10px; border: 1px solid #ccc; margin: 10px 0; border-radius: 5px;">
+            <p style="font-weight: bold;">Emily Johnson - <span style="color: #F5AF23;">★★★☆☆</span></p>
+            <p>"Average experience, the repair took longer than expected."</p>
+        </div>
+        <div class="review" data-rating="5" style="padding: 10px; border: 1px solid #ccc; margin: 10px 0; border-radius: 5px;">
+            <p style="font-weight: bold;">Michael Brown - <span style="color: #F5AF23;">★★★★☆</span></p>
+            <p>"Fantastic work! They went above and beyond to fix my issues."</p>
+        </div>
+        <div class="review" data-rating="4" style="padding: 10px; border: 1px solid #ccc; margin: 10px 0; border-radius: 5px;">
+            <p style="font-weight: bold;">Sarah Wilson - <span style="color: #F5AF23;">★★★★☆</span></p>
+            <p>"Very reliable, would definitely hire them again!"</p>
+        </div>
+        <div class="review" data-rating="1" style="padding: 10px; border: 1px solid #ccc; margin: 10px 0; border-radius: 5px;">
+            <p style="font-weight: bold;">Tom Green - <span style="color: #F5AF23;">★☆☆☆☆</span></p>
+            <p>"Terrible service, very disappointed."</p>
+        </div>
+    </div>
+    <button id="add-review-btn" style="padding: 10px 20px; background-color: #5cb85c; color: #fff; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">Add Review</button>
+</section>
+
+<script>
+    const starFilter = document.getElementById('star-rating');
+    const reviews = document.querySelectorAll('.review');
+    const addReviewBtn = document.getElementById('add-review-btn');
+
+    starFilter.addEventListener('change', function() {
+        const selectedRating = starFilter.value;
+
+        reviews.forEach(review => {
+            const reviewRating = review.getAttribute('data-rating');
+            if (selectedRating === 'all' || reviewRating === selectedRating) {
+                review.style.display = 'block';
+            } else {
+                review.style.display = 'none';
+            }
+        });
+    });
+
+    addReviewBtn.addEventListener('click', function() {
+        const isLoggedIn = false; 
+
+        if (!isLoggedIn) {
+            alert('You must register or login to add a review.');
+            // Redirect to login or registration page
+            window.location.href = 'contractor_login/contractor_dashboard/user_registration/user_login/user_login.php'; 
+        } else {
+            // Logic to open review form goes here
+        }
+    });
+</script>
+
+<!-- Our Team Section -->
+<section id="team" style="padding: 20px; background-color: #f9f9f9;">
+    <h2 style="text-align: center;">Our Team</h2>
+    <div class="team-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+        <div class="team-group" style="display: flex; justify-content: center; gap: 20px;">
+            <div class="team-member" style="text-align: center;">
+                <img src="../IMAGES/developer1.jpg" alt="Developer 1" style="width: 150px; height: 150px; border-radius: 50%;">
+                <p style="font-weight: bold;">Xavier Chetty</p>
+                <p style="font-style: italic;">Team lead developer</p>
+            </div>
+            <div class="team-member" style="text-align: center;">
+                <img src="../IMAGES/developer2.jpg" alt="Developer 2" style="width: 150px; height: 150px; border-radius: 50%;">
+                <p style="font-weight: bold;">Prenasha Moodley</p>
+                <p style="font-style: italic;">Home page developer</p>
+            </div>
+            <div class="team-member" style="text-align: center;">
+                <img src="../IMAGES/developer3.jpg" alt="Developer 3" style="width: 150px; height: 150px; border-radius: 50%;">
+                <p style="font-weight: bold;">Neitisha Singh</p>
+                <p style="font-style: italic;">Dashboard developer</p>
+            </div>
+        </div>
+        <div class="team-group" style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+            <div class="team-member" style="text-align: center;">
+                <img src="../IMAGES/developer4.jpg" alt="Developer 4" style="width: 150px; height: 150px; border-radius: 50%;">
+                <p style="font-weight: bold;">Yuvish Arjun</p>
+                <p style="font-style: italic;">Registration page developer</p>
+            </div>
+            <div class="team-member" style="text-align: center;">
+                <img src="../IMAGES/developer5.jpg" alt="Developer 5" style="width: 150px; height: 150px; border-radius: 50%;">
+                <p style="font-weight: bold;">Preston Govindsamy</p>
+                <p style="font-style: italic;">Payment gateway designer</p>
+            </div>
+            <div class="team-member" style="text-align: center;">
+                <img src="../IMAGES/developer6.jpg" alt="Developer 6" style="width: 150px; height: 150px; border-radius: 50%;">
+                <p style="font-weight: bold;">Kaylan Naidoo</p>
+                <p style="font-style: italic;">Recruitment manager</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</div>
+
+<!-- Blog Section -->
+<div style="background-color: #f9f9f9; padding: 50px; text-align: center;">
+    <h2 style="color: #005A8D; font-size: 25px; margin-bottom: 30px;">Latest Blog Posts</h2>
+    
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+        <!-- Blog Post 1 -->
+        <div style="width: 30%; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s;">
+            <img src="../IMAGES/blog_image1.png" alt="Blog Post 1" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px;">
+                <h3 style="color: #333; font-size: 24px;">How to Maintain Your Home</h3>
+                <p style="color: #777; font-size: 14px;">Discover tips and tricks to keep your home in tip-top shape throughout the year.</p>
+                <a href="blog1.html" style="text-decoration: none;">
+                    <button style="background-color: #005A8D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Read More</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div style="width: 30%; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s;">
+            <img src="../IMAGES/blog_image2.png" alt="Blog Post 2" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px;">
+                <h3 style="color: #333; font-size: 24px;">Top DIY Repairs for Your Home</h3>
+                <p style="color: #777; font-size: 14px;">Learn how to handle simple home repairs yourself with our easy guide.</p>
+                <a href="blog2.html" style="text-decoration: none;">
+                    <button style="background-color: #005A8D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Read More</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div style="width: 30%; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s;">
+            <img src="../IMAGES/blog_image3.png" alt="Blog Post 3" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px;">
+                <h3 style="color: #333; font-size: 24px;">Seasonal Home Improvement Ideas</h3>
+                <p style="color: #777; font-size: 14px;">Get inspired by our seasonal tips for improving your home all year round.</p>
+                <a href="blog3.html" style="text-decoration: none;">
+                    <button style="background-color: #005A8D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Read More</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Add a simple hover effect to scale the blog posts
+    const blogPosts = document.querySelectorAll('div[style*="box-shadow"]');
+    blogPosts.forEach(post => {
+        post.addEventListener('mouseover', () => {
+            post.style.transform = 'scale(1.05)';
+        });
+        post.addEventListener('mouseout', () => {
+            post.style.transform = 'scale(1)';
+        });
+    });
+</script>
+<!-- Footer -->
+<footer style="text-align: center; padding: 20px; background-color:#0177B8 ;">
+    <p>&copy; 2024 Home Synergy. All rights reserved.</p>
+	
+    <div class="social-links" style="margin-top: 10px;">
+        <!-- Facebook Icon -->
+        <a href="https://www.facebook.com/profile.php?id=61567395876762&mibextid=ZbWKwL" target="_blank" style="margin-right: 15px; color: #3b5998; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-facebook"></i>
+        </a>
+
+        <!-- Instagram Icon -->
+        <a href="https://www.instagram.com/home_synergy/" target="_blank" style="margin-right: 15px; color: #E1306C; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <!-- TikTok Icon -->
+        <a href="https://www.tiktok.com/@home_synergy?_t=8r0MtooSltu&_r=1 target="_blank" style="margin-right: 15px; color: #000000; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+        <!-- WhatsApp API Icon -->
+        <a href="https://api.whatsapp.com/send?phone=+27684205940&text=Hello, I need some assistance!" target="_blank" style="color: #25D366; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Terms and Conditions Link -->
+    <a href="#" id="termsLink" style="text-decoration: none; color: white; cursor: pointer; display: block; margin-top: 15px;">Terms and Conditions</a>
+</footer>
+
+<!-- Terms and Conditions Modal Popup -->
+<div id="termsModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4);">
+    <div style="background-color: #fff; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); max-height: 80%; overflow-y: auto;">
+        <span id="closeModal" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <h2 style="margin-top: 0;">Terms and Conditions</h2>
+        <p style="line-height: 1.6;">
+            By using this website, you agree to the following terms and conditions. Please read them carefully before using our service.
+        </p>
+        <p style="line-height: 1.6;">
+            Welcome to <strong>Home Synergy</strong>. By accessing or using our website and services, you agree to be bound by the following Terms and Conditions. Please read them carefully before using our website.
+        </p>
+        <p style="line-height: 1.6;">
+            1. Acceptance of Terms: By using our website or services, you agree to these terms. If you do not agree, please refrain from using the website.
+        </p>
+        <p style="line-height: 1.6;">
+            2. Services Overview: Home Synergy provides home repair, maintenance, and improvement services by connecting homeowners with vetted professionals. The services include, but are not limited to:
+            <ul>
+                <li>Electrical repairs and installations</li>
+                <li>Carpentry services</li>
+                <li>Plumbing services</li>
+                <li>Painting and home improvements</li>
+            </ul>
+        </p>
+        <p style="line-height: 1.6;">
+            3. User Responsibilities: When using our services, you agree to provide accurate and up-to-date information during the booking process. Comply with all applicable laws and regulations. Ensure that any work area is safe and accessible for the service providers.
+        </p>
+        <p style="line-height: 1.6;">
+            4. Service Provider Responsibilities: Service providers are independent contractors who have been vetted by Home Synergy. While we strive to ensure that all providers meet high standards, we are not liable for any work or conduct performed by the contractors.
+        </p>
+        <p style="line-height: 1.6;">
+            5. Payment Terms: Payment for services is due upon completion of the job, unless otherwise agreed upon in writing. We accept payment via [Insert Payment Methods]. Late payments may incur additional fees.
+        </p>
+        <p style="line-height: 1.6;">
+            6. Cancellations and Rescheduling: You may cancel or reschedule a service request at least 24 hours in advance without penalty. Cancellations made within 24 hours of the scheduled service may be subject to a cancellation fee.
+        </p>
+        <p style="line-height: 1.6;">
+            7. Disclaimer of Warranties: Home Synergy does not guarantee that the services provided will meet your expectations or that the website will operate uninterrupted or error-free. All services are provided "as-is" without any warranties, either express or implied.
+        </p>
+        <p style="line-height: 1.6;">
+            8. Limitation of Liability: In no event shall Home Synergy, its employees, or contractors be liable for any indirect, incidental, or consequential damages arising from the use of our services or website.
+        </p>
+        <p style="line-height: 1.6;">
+            9. Privacy Policy: By using our website and services, you consent to the collection and use of your personal information as outlined in our <a href="#">Privacy Policy</a>.
+        </p>
+        <p style="line-height: 1.6;">
+            10. Modification of Terms: We reserve the right to modify these Terms and Conditions at any time. Any changes will be posted on this page, and your continued use of the website or services constitutes acceptance of the updated terms.
+        </p>
+        <p style="line-height: 1.6;">
+            11. Governing Law: These Terms and Conditions are governed by and construed in accordance with the laws of South Africa, and you agree to submit to the jurisdiction of its courts.
+        </p>
+        <p style="line-height: 1.6;">
+            12. Contact Information: If you have any questions about these Terms and Conditions, please contact us at:
+            <br>Email: support@homesynergy.co.za
+            <br>Phone: [Insert Phone Number]
+        </p>
+    </div>
+</div>
+
+<script>
+    // Terms and Conditions Popup Script
+    var modal = document.getElementById("termsModal");
+    var termsLink = document.getElementById("termsLink");
+    var closeModal = document.getElementById("closeModal");
+
+    // Open the modal when clicking the "Terms and Conditions" link
+    termsLink.onclick = function(event) {
+        event.preventDefault();
+        modal.style.display = "block";
+    }
+
+    // Close the modal when clicking the close (×) button
+    closeModal.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close the modal when clicking outside the modal content
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

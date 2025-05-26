@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Maintain Your Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            background-color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+         
+            overflow: hidden;
+        }
+        .header {
+            background-color:#0177B8;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 5px solid #003d5e;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+        .content {
+            padding: 20px 40px;
+            line-height: 1.8;
+            color: #333;
+            font-size: 18px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between; /* Adjust spacing between images */
+            margin: 20px 0; /* Space above and below the image container */
+        }
+        .image-container img {
+            width: 48%; /* Adjust width to fit side by side */
+            border-radius: 10px;
+        }
+        .content p {
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+        .content strong {
+            color: #005A8D;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #0177B8;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 90, 141, 0.3);
+        }
+        .btn-back:hover {
+            background-color: #003d5e;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0177B8;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>How to Maintain Your Home</h1>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <div class="image-container">
+                <img src="../IMAGES/maintain2.png" alt="A well-maintained home exterior">
+                <img src="../IMAGES/maintain3.png" alt="A well-maintained home exterior">
+            </div>
+			<h4> by Prenasha Moodley </h4>
+            <p>
+                Keeping your home in pristine condition not only enhances its value but also ensures a comfortable and safe living environment. By following a few simple maintenance routines, you can keep your home looking beautiful and functional throughout the year.
+            </p>
+            <p>
+                <strong>1. Regular Cleaning:</strong> Make it a habit to clean your home regularly. Dust, vacuum, and mop your floors to prevent wear and tear. Pay attention to high-traffic areas where dirt and grime can accumulate faster.
+            </p>
+            <p>
+                <strong>2. Seasonal Maintenance:</strong> Each season brings new challenges for your home. Clean your gutters in the fall, check your heating system before winter, and inspect your roof and windows for leaks. A little effort each season goes a long way in avoiding major repairs later.
+            </p>
+            <p>
+                <strong>3. Lawn & Garden Care:</strong> Your outdoor space is an extension of your home. Keep your lawn trimmed, plants watered, and pathways clear. Consider adding seasonal flowers for a touch of color and beauty.
+            </p>
+            <p>
+                <strong>4. Inspect for Wear:</strong> Walk through your home regularly and inspect for any wear and tear. Check your faucets, electrical outlets, and appliances. Catching problems early will prevent costly repairs.
+            </p>
+            <a class="btn-back" href="home.html">← Back to home</a>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            Home Synergy © 2024 | From fixes to finishes
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.btn-back').addEventListener('click', function() {
+            console.log('Back to blog list clicked');
+        });
+    </script>
+</body>
+</html>

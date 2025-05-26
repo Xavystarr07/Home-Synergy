@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('h6.jpg'); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the background image */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensures the background covers the full height of the viewport */
+}
+
+.header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header h1 {
+    color: black;
+    font-size: 36px;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-style: italic;
+    font-family: 'Cursive', serif;
+    color: black;
+    margin-top: 0;
+    font-size: 18px;
+	font-weight: 900;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.left-buttons, .right-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subpage-btn {
+    background-color: #237c19;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.subpage-btn:hover {
+    background-color: #45a049;
+}
+
+.image-container {
+    text-align: center;
+    margin: 0 20px;
+}
+
+.image-container img {
+    width: 600px;
+    height: auto;
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.home-btn {
+    background-color: #3b8df7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.home-btn:hover {
+    background-color: #0056b3;
+}

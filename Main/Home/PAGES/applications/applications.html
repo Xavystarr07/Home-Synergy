@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0177B8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid #007BFF;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            color: #0177B8;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: black;
+        }
+        input[type="text"], input[type="file"], select, button {
+            width: 100%;
+            padding: 9px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+        input[type="text"]:focus, input[type="file"]:focus, select:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+        button {
+            background-color: #0177B8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            padding: 12px;
+            transition: background-color 0.3s, transform 0.2s;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: blue;
+            transform: translateY(-2px);
+        }
+        button:active {
+            background-color: cyan;
+            transform: translateY(0);
+        }
+        #loading {
+            display: none;
+            text-align: center;
+            color: blue;
+            font-weight: bold;
+        }
+        #thankYouMessage {
+            display: none;
+            text-align: center;
+            color: #28a745; /* Green */
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Join Our Team!</h1>
+    <p>We are thrilled that you are considering joining us at Home Synergy. Your unique skills and experiences are what we’re looking for, and we can’t wait to learn more about you!</p>
+    
+    <form id="applicationForm" action="submit_applications.php" method="POST" enctype="multipart/form-data">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required pattern="[A-Za-z ]+" title="Please enter only text values.">
+        
+        <label for="surname">Surname</label>
+        <input type="text" id="surname" name="surname" placeholder="Enter your surname" required pattern="[A-Za-z ]+" title="Please enter only text values.">
+        
+        <label for="profession">Profession</label>
+        <select id="profession" name="profession" required>
+            <option value="" disabled selected>Select your profession</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="electrical">Electrical</option>
+            <option value="carpentry">Carpentry</option>
+            <option value="painting">Painting</option>
+        </select>
+
+        <label for="location">Location</label>
+<select id="location" name="location" required>
+    <option value="" disabled selected>Select your province</option>
+    <option value="Eastern Cape">Eastern Cape</option>
+    <option value="Free State">Free State</option>
+    <option value="Gauteng">Gauteng</option>
+    <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+    <option value="Limpopo">Limpopo</option>
+    <option value="Mpumalanga">Mpumalanga</option>
+    <option value="North West">North West</option>
+    <option value="Northern Cape">Northern Cape</option>
+    <option value="Western Cape">Western Cape</option>
+</select>
+
+
+        <label for="contactMethod">Preferred Contact Method</label>
+        <select id="contactMethod" name="contactMethod" required>
+            <option value="" disabled selected>Select a contact method</option>
+            <option value="phone">Phone Number</option>
+            <option value="email">Email</option>
+        </select>
+        
+        <label for="contactInfo">Contact Information</label>
+        <input type="text" id="contactInfo" name="contactInfo" placeholder="Enter your phone number or email address" required>
+
+        <label for="cv">Upload your CV (PDF only)</label>
+        <input type="file" id="cv" name="cv" accept=".pdf" required>
+        
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <p id="thankYouMessage" aria-live="polite"></p>
+    <p id="loading" aria-live="assertive"></p>
+</div>
+
+<script>
+    document.getElementById('applicationForm').onsubmit = async function(event) {
+    event.preventDefault(); // Prevent form submission to handle via JavaScript
+
+    const submitButton = event.target.querySelector('button');
+    document.getElementById('loading').style.display = 'block'; // Show loading message
+    submitButton.disabled = true; // Disable the submit button to prevent multiple submissions
+
+    const name = document.getElementById('name').value;
+    const surname = document.getElementById('surname').value;
+    const profession = document.getElementById('profession').value;
+    const location = document.getElementById('location').value;
+    const contactMethod = document.getElementById('contactMethod').value;
+    const contactInfo = document.getElementById('contactInfo').value;
+    const cv = document.getElementById('cv').files[0];
+
+    // Validate text inputs for valid characters
+    const textPattern = /^[A-Za-z\s]+$/;
+    if (!textPattern.test(name) || !textPattern.test(surname)) {
+        alert('Please enter valid text for Name or Surname. No numbers or symbols allowed.');
+        submitButton.disabled = false; // Re-enable the button
+        document.getElementById('loading').style.display = 'none'; // Hide loading message
+        return; // Exit the function
+    }
+
+    // Validate that name and surname have at least 2 letters
+    if (name.length < 2 || surname.length < 2) {
+        alert('Name and Surname must each be at least 2 letters.');
+        submitButton.disabled = false; // Re-enable the button
+        document.getElementById('loading').style.display = 'none'; // Hide loading message
+        return;
+    }
+
+    // Validate contact method
+    if (contactMethod === "email") {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(contactInfo)) {
+            alert("Please enter a valid email address.");
+            submitButton.disabled = false; // Re-enable the button
+            document.getElementById('loading').style.display = 'none'; // Hide loading message
+            return;
+        }
+    } else if (contactMethod === "phone") {
+        const phonePattern = /^0\d{9}$/;
+        if (!phonePattern.test(contactInfo)) {
+            alert("Please enter a valid phone number that starts with 0 and is 10 digits long.");
+            submitButton.disabled = false; // Re-enable the button
+            document.getElementById('loading').style.display = 'none'; // Hide loading message
+            return;
+        }
+    } else {
+        alert("Please select a contact method.");
+        submitButton.disabled = false; // Re-enable the button
+        document.getElementById('loading').style.display = 'none'; // Hide loading message
+        return;
+    }
+
+    // Validate CV file type
+    const validExtensions = ['application/pdf'];
+    const cvExtension = cv ? cv.name.split('.').pop().toLowerCase() : '';
+    if (cv && (!validExtensions.includes(cv.type) || cvExtension !== 'pdf')) {
+        alert('Please upload a PDF file.');
+        submitButton.disabled = false; // Re-enable the button
+        document.getElementById('loading').style.display = 'none'; // Hide loading message
+        return;
+    }
+
+    const formData = new FormData(); // Create form data to send
+    formData.append('name', name);
+    formData.append('surname', surname);
+    formData.append('profession', profession);
+    formData.append('location', location);
+    formData.append('contactMethod', contactMethod);
+    formData.append('contactInfo', contactInfo);
+    if (cv) formData.append('cv', cv);
+
+    try {
+        const response = await fetch('submit_applications.php', {
+            method: 'POST',
+            body: formData, // Send the form data
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        // Show success message and redirect
+        alert('Your application has been submitted successfully!');
+        window.location.href = '/Home_Synergy_Code/Main/Home/PAGES/home.html';
+    } catch (error) {
+        console.error('Error submitting the form:', error);
+        alert('There was a problem with your submission. Please try again later.');
+    } finally {
+        document.getElementById('loading').style.display = 'none'; // Hide loading message
+        submitButton.disabled = false; // Re-enable the button
+    }
+};
+
+</script>
+
+</body>
+</html>

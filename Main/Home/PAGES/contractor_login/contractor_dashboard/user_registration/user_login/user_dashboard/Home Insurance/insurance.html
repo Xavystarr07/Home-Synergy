@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Insurance</title>
+    <style>
+        body {
+            background-image: url('i5.jpg'); 
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            height: 100vh; /* Full height of the viewport */
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif;
+            position: relative; /* Necessary for absolute positioning of child elements */
+        }
+
+        .blue-background {
+            background-color: #A1C8E5; /* Updated shade of blue */
+            padding: 20px; /* Padding around the text */
+            text-align: center; /* Center align all text */
+            border-radius: 8px; /* Rounded corners */
+            margin: 20px auto; /* Center the container */
+            width: fit-content; /* Fit the content width */
+        }
+
+        h1 {
+            font-weight: bold;
+            margin: 0; /* Remove extra space */
+        }
+
+        p {
+            font-style: italic;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .subheading {
+            font-weight: 600;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* Button style for insurance company links */
+        .insurance-btn,
+        .back-btn {
+            display: inline-block;
+            width: 100px;
+			height: 25px;
+            padding: 15px; /* Same padding for all buttons */
+            background-color: #A1C8E5; /* Baby blue background */
+            color: black; 
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+			font-weight: bold;
+            margin: 10px; /* Spacing between buttons */
+            transition: background-color 0.3s ease;
+        }
+
+        .insurance-btn:hover,
+        .back-btn:hover {
+            background-color: #88B4D1; /* Darker baby blue on hover */
+        }
+
+        /* Styling for the links section */
+        .links-section {
+            display: flex; /* Use flexbox */
+            justify-content: space-between; /* Space between the two columns */
+            margin-top: 20px;
+            position: relative; /* Position for potential overlay effects */
+            z-index: 1; /* Ensure it appears above the background */
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column; /* Align buttons vertically in each column */
+        }
+
+        /* Ensure text is legible over the background */
+        .links-section h1, .links-section p, .links-section .subheading {
+            position: relative;
+            z-index: 1; /* Ensure it appears above the background */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Blue background container for text -->
+    <div class="blue-background">
+        <h1>Home Insurance</h1>
+        <p>"Home is the heart's anchor, secure it now..."</p>
+        <p class="subheading">Secure your home with South Africa's Top 10 Home Insurance Companies</p>
+    </div>
+
+    <!-- Container for the two columns of buttons -->
+    <div class="links-section">
+        <!-- Left column with 5 buttons -->
+        <div class="column">
+            <a href="https://www.kingprice.co.za/" class="insurance-btn">King Price Insurance</a>
+            <a href="https://www.discovery.co.za/car-and-home-insurance/home-insurance?msockid=304de56c7aa7607f2548f1c17b8461b1" class="insurance-btn">Discovery</a>
+            <a href="https://www.miway.co.za/home-insurance" class="insurance-btn">MiWay</a>
+            <a href="https://www.oldmutual.co.za/personal/solutions/short-term-insurance/car-and-home/" class="insurance-btn">Old Mutual</a>
+            <a href="https://www.outsurance.co.za/home-insurance/" class="insurance-btn">Outsurance</a>
+        </div>
+
+        <!-- Right column with 5 buttons -->
+        <div class="column">
+            <a href="https://www.sanlam.co.za/personal/insurance/Pages/short-term-insurance.aspx" class="insurance-btn">Sanlam</a>
+            <a href="https://www.dialdirect.co.za/home-insurance/" class="insurance-btn">Dial Direct</a>
+            <a href="https://www.hollard.co.za/life-and-stuff/home-insurance" class="insurance-btn">Hollard</a>
+            <a href="https://www.momentum.co.za/momentum/personal/products/car-and-home#/insure" class="insurance-btn">Momentum</a>
+            <a href="https://www.budgetinsurance.co.za/home-insurance/" class="insurance-btn">Budget Insurance</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Jacquarda+Bastarda+9&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+.Logo{
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 5px;
+  background-color: #111;
+  margin-left: 20px;
+  margin-bottom: -10px;
+}
+.heading{
+  font-family: "Anton", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 40px;
+  max-width: 100px;
+  margin-left: 37%;
+  
+}
+.gohome{
+  max-width: fit-content;
+  
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #092094;
+    padding: 25px;
+}
+
+.container form{
+    width: 1125px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    
+}
+nav{
+    height: 80px;
+    background: #fff;
+    width: 100%;
+    display: block;
+}
+ul .li-card {
+  display: inline-block;
+  line-height: 0px;
+  text-decoration: none;
+  text-decoration-line: none;
+  line-height: 0px;
+  padding-left: 0%;
+  padding-top: 0%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+} 
+
+a{
+ 
+  text-decoration: none;
+  text-decoration-line: none;
+  
+}
+.PaymentMethods{
+  margin-bottom: 0px;
+  padding-bottom: 0%;
+}
+ul{
+    color:#092094;
+    list-style: none;
+    display: block;
+    float: right;
+    padding-top: 7px;
+    padding-left: 10px;
+}
+.li-cards{
+  padding-top: 0px;
+  margin-top: 0px;
+}
+li{
+    
+    display: inline-block;
+    line-height: 70px;
+    margin: 0px 20px;
+    text-decoration: none;
+    text-decoration-line: none;
+} 
+
+.logo{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+form .row {
+    display: flex;
+    justify-content: space-between; /* Distribute the columns equally */
+    gap: 30px;
+}
+
+.row .column {
+    flex: 1;
+}
+
+.payment-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align the items to the left */
+    justify-content: flex-start;
+}
+
+.input-box {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.input-box input,
+.input-box select {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.cards .li-cards {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.cards .li-card img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s;
+}
+
+.cards .li-card img:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #092094;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: black;
+}
+
+.column .title{
+    font-size: 40px;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.column .input-box{
+    margin: 10px 0px;
+}
+.input-box span{
+    display: block;
+    margin-bottom: 10px;
+}
+.input-box input{
+    width: 250px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+.column .flex{
+  display: flex;
+  gap: 10px;
+}
+.flex .input-box{
+   margin-top: 15px;
+}
+
+form .btn{
+  width: 1075px;
+  padding: 12px;
+  background: #092094;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  margin-top: 10px;
+  transition: .5s;
+}
+
+.gohome{
+  color: black;
+
+}
+.paypal{
+  max-width: 60px;
+  max-height: 60px;
+  resize: both;
+  padding-bottom: 10px;
+}
+.li-card a{
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+/* Add blue outline when a payment method is selected */
+.cards .li-card img {
+            border: 2px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .cards .li-card img.selected {
+            border-color: blue;
+        }
+		
+.gohome:hover{
+  color: #092094;
+}
+
+form .btn:hover{
+    background: black;
+}
+
+.li-nav a{
+  transition: .5s;
+  padding: 10px 15px;
+}
+.li-nav a:hover{
+  color: #ccc;
+}
+.main-content{
+  display: flex;
+  gap: 100px;
+  align-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.center-box{
+  max-width: 330px;
+  margin-right: 80px;
+  display: inline-block;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+	
+}
+
+.cards .li-card {
+    margin: 10px;
+    list-style: none;
+}
+
+.cards .li-card img {
+    width: 80px;
+    height: auto;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.cards .li-card img:hover {
+    transform: scale(1.1);
+    border-color: blue;
+}
+
+.add{
+  margin-bottom: 20px;
+}
+.fas{
+  margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between; /* Pushes content to opposite sides */
+    align-items: flex-start; /* Aligns all content to the top */
+    gap: 50px;
+}
+
+.column {
+    flex: 1;
+    max-width: 500px; /* Adjust this value to your needs */
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.PaymentMethods {
+    margin-bottom: 0px;
+    padding-bottom: 0%;
+}
+
+.row {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+form .btn {
+    width: 150%; /* Adjust width to desired size */
+    padding: 12px;
+    background: #092094;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 10px;
+    transition: .5s;
+    margin-left: -110%; /* Moves the button to the left beyond the form */
+}
+
+
+
+form .btn:hover {
+    background: black;
+}

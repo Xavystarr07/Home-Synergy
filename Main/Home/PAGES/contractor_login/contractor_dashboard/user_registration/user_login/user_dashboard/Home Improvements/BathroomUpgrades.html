@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bathroom Upgrades</title>
+    <style>
+        /* Styling for the Back to Home Improvements button */
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #003366; /* Dark blue background */
+            color: white; /* White text color */
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            font-size: 18px; /* Button text size */
+            text-align: center;
+            cursor: pointer; /* Cursor changes to pointer on hover */
+            text-decoration: none; /* Removes underline from link */
+            transition: background-color 0.3s ease; /* Smooth background color change */
+        }
+
+        /* Change background color on hover for the button */
+        .back-btn:hover {
+            background-color: #0059b3; /* Lighter blue on hover */
+        }
+
+        /* Grid layout for images with smaller spacing */
+        section.grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted column width */
+            gap: 10px; /* Reduced gap between images */
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Image styles */
+        section.grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect for images */
+        section.grid img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f0f0;">
+    <!-- Page Heading -->
+    <header style="background-color: #0177B8; color: white; padding: 20px; text-align: center;">
+        <h1 style="margin: 0;">Bathroom Upgrades</h1>
+    </header>
+
+    <!-- Pictures Section (Grid Layout) -->
+    <section class="grid">
+        <!-- Each image is styled with hover effects -->
+        <img src="b1.jpg" alt="Decor Image 1">
+        <img src="b2.jpg" alt="Decor Image 2">
+        <img src="b3.jpg" alt="Decor Image 3">
+        <img src="b4.jpg" alt="Decor Image 4">
+        <img src="b5.jpg" alt="Decor Image 5">
+        <img src="b6.jpg" alt="Decor Image 6">
+        <img src="b7.jpg" alt="Decor Image 7">
+        <img src="b8.jpg" alt="Decor Image 8">
+        <img src="b9.jpg" alt="Decor Image 9">
+        <img src="b10.jpg" alt="Decor Image 10">
+    </section>
+
+    <!-- Contact Information Section -->
+    <section style="background-color: white; padding: 20px; margin: 40px auto; max-width: 400px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #003366; margin-top: 20px;">Contact Information</h2>
+        <p><strong>Name:</strong> Tina Grey</p>
+        <p><strong>Phone Number:</strong> 0765678978</p>
+        <p><strong>Email Address:</strong> <a href="mailto:your-email@example.com" style="color: #003366; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">your-email@example.com</a></p>
+    </section>
+
+    <!-- Back to Home Improvements Button -->
+    <div style="text-align: center; margin-bottom: 40px;">
+        <a href="hi.html" class="back-btn">Back to Home Improvements</a>
+    </div>
+
+</body>
+</html>
